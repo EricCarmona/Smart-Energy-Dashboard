@@ -1,5 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+
+// Controleer of de gebruiker is ingelogd.
+// Als dat niet zo is, wordt hij doorgestuurd naar index.php om in te loggen.
+<?php
+session_start();
+
+if (!isset($_SESSION['user_is_logged_in']) || $_SESSION['user_is_logged_in'] !== true) {
+    header("Location: index.php");
+    exit();
+}
+?>
+
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,63 +27,65 @@
       <h1>Smart Energy Dashboard</h1>
     </header>
     <main>
+      <a href="index.php?action=logout">Log uit</a>
+
       <section class="stats-grid">
         <div class="stat-card green">
-          <span class="stat-title">Overall Efficiency</span>
+          <span class="stat-title">Eficiencia General</span>
           <span class="stat-value">70%</span>
         </div>
         <div class="stat-card green">
-          <span class="stat-title">Renewable Energy Use</span>
+          <span class="stat-title">Uso Energía Renovable</span>
           <span class="stat-value">70%</span>
         </div>
         <div class="stat-card green">
-          <span class="stat-title">CO₂ Reduction</span>
+          <span class="stat-title">Reducción de CO₂</span>
           <span class="stat-value">40%</span>
         </div>
         <div class="stat-card green">
-          <span class="stat-title">Cost Savings</span>
+          <span class="stat-title">Ahorro Costos</span>
           <span class="stat-value">150</span>
         </div>
         <div class="stat-card green">
-          <span class="stat-title">Carbon Footprint</span>
+          <span class="stat-title">Huella de Carbono</span>
           <span class="stat-value">150</span>
         </div>
       </section>
       <section class="charts-grid">
         <div class="chart-card">
-          <h2>Energy Consumption</h2>
+          <h2>Consumo de Energía</h2>
           <canvas id="chart1"></canvas>
         </div>
         <div class="chart-card">
-          <h2>Daily Energy Cost</h2>
+          <h2>Costo Diario de Energía</h2>
           <canvas id="chart2"></canvas>
         </div>
         <div class="chart-card">
-          <h2>CO₂ Footprint</h2>
+          <h2>Huella de Carbono CO₂</h2>
           <canvas id="chart3"></canvas>
         </div>
         <div class="chart-card">
-          <h2>Storage Capacity</h2>
+          <h2>Capacidad de Almacenamiento</h2>
           <canvas id="chart4"></canvas>
         </div>
         <div class="chart-card">
-          <h2>Chart 5</h2>
+          <h2>Gráfica 5</h2>
           <canvas id="chart5"></canvas>
         </div>
         <div class="chart-card">
-          <h2>Chart 6</h2>
+          <h2>Gráfica 6</h2>
           <canvas id="chart6"></canvas>
         </div>
         <div class="chart-card">
-          <h2>Chart 7</h2>
+          <h2>Gráfica 7</h2>
           <canvas id="chart7"></canvas>
         </div>
         <div class="chart-card">
-          <h2>Chart 8</h2>
+          <h2>Gráfica 8</h2>
           <canvas id="chart8"></canvas>
         </div>
         <div class="chart-card">
-          <h2>Monthly Solar Production</h2>
+          <h2>Producción Solar Mensual</h2>
           <canvas id="chart9"></canvas>
         </div>
       </section>

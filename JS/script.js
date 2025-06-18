@@ -1,24 +1,24 @@
-// Colors inspired by the dashboard design
+// Colores inspirados en el diseño de la imagen
 const green = "#87cfa6";
 const lightGreen = "#eaf8ed";
 const orange = "#faa993";
 const textGray = "#7f7f7f";
 
-// Chart 1: Energy Consumption (Bar + Line)
+// Chart 1: Consumo de Energía (Barra + Línea)
 const ctx1 = document.getElementById('chart1').getContext('2d');
 new Chart(ctx1, {
   type: 'bar',
   data: {
-    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    labels: ['Enero','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
     datasets: [
       {
-        label: 'Energy',
+        label: 'Energía',
         data: [80, 90, 60, 70, 40, 60, 110, 180, 120, 115, 90, 60],
         backgroundColor: orange + "99",
         borderRadius: 8
       },
       {
-        label: 'Temperature',
+        label: 'Temperatura',
         type: 'line',
         data: [10, 12, 13, 18, 20, 23, 25, 26, 22, 18, 14, 11],
         borderColor: green,
@@ -45,7 +45,7 @@ const ctx2 = document.getElementById('chart2').getContext('2d');
 new Chart(ctx2, {
   type: 'pie',
   data: {
-    labels: ['Main Energy', 'Green Energy'],
+    labels: ['Energía Principal', 'Energía Verde'],
     datasets: [{
       data: [72, 28],
       backgroundColor: [orange, green],
@@ -60,7 +60,7 @@ new Chart(ctx2, {
   }
 });
 
-// Chart 3: CO₂ Footprint Line
+// Chart 3: Línea Huella de Carbono
 const ctx3 = document.getElementById('chart3').getContext('2d');
 new Chart(ctx3, {
   type: 'line',
@@ -88,12 +88,12 @@ new Chart(ctx3, {
   }
 });
 
-// Chart 4: Storage Capacity Doughnut
+// Chart 4: Doughnut Capacidad
 const ctx4 = document.getElementById('chart4').getContext('2d');
 new Chart(ctx4, {
   type: 'doughnut',
   data: {
-    labels: ['Main Power', 'Green Energy', 'Reserve'],
+    labels: ['Energía Principal', 'Energía Verde'],
     datasets: [{
       data: [50, 25, 25],
       backgroundColor: [orange, green, lightGreen],
@@ -109,14 +109,14 @@ new Chart(ctx4, {
   }
 });
 
-// Chart 5: Line Demo
+// Chart 5: Línea Demo
 const ctx5 = document.getElementById('chart5').getContext('2d');
 new Chart(ctx5, {
   type: 'line',
   data: {
     labels: ['A','B','C','D','E','F','G','H'],
     datasets: [{
-      label: 'Series A',
+      label: 'Serie A',
       data: [10, 20, 15, 30, 20, 25, 18, 22],
       borderColor: orange,
       backgroundColor: orange + "33",
@@ -144,7 +144,7 @@ new Chart(ctx6, {
   data: {
     labels: ['1','2','3','4','5','6'],
     datasets: [{
-      label: 'Amount',
+      label: 'Cantidad',
       data: [4, 8, 5, 7, 6, 3],
       backgroundColor: green + "cc",
       borderRadius: 8
@@ -169,7 +169,7 @@ new Chart(ctx7, {
   data: {
     labels: ['A', 'B', 'C', 'D', 'E'],
     datasets: [{
-      label: 'Values',
+      label: 'Valores',
       data: [20, 10, 30, 15, 25],
       backgroundColor: green + "33",
       borderColor: green,
@@ -196,10 +196,10 @@ const ctx8 = document.getElementById('chart8').getContext('2d');
 new Chart(ctx8, {
   type: 'polarArea',
   data: {
-    labels: ['One', 'Two', 'Three', 'Four'],
+    labels: ['Uno', 'Dos', 'Tres', 'Cuatro'],
     datasets: [{
       data: [11, 16, 7, 14],
-      backgroundColor: [green, orange, lightGreen, "#f0c0c0"],
+      backgroundColor: [green, orange, lightGreen, "#fff"]
     }]
   },
   options: {
@@ -210,14 +210,14 @@ new Chart(ctx8, {
   }
 });
 
-// Chart 9: Monthly Solar Production
+// Chart 9: Producción Solar Mensual
 const ctx9 = document.getElementById('chart9').getContext('2d');
 new Chart(ctx9, {
   type: 'bar',
   data: {
-    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    labels: ['Enero','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
     datasets: [{
-      label: 'kWh Generated',
+      label: 'kWh Generados',
       data: [320, 410, 540, 600, 730, 820, 900, 870, 760, 620, 410, 300],
       backgroundColor: "#87cfa6cc",
       borderRadius: 8
