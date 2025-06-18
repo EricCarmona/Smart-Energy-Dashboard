@@ -1,10 +1,10 @@
-// Colores inspirados en el diseño de la imagen
+// Colors inspired by the design in the image.
 const green = "#87cfa6";
 const lightGreen = "#eaf8ed";
 const orange = "#faa993";
 const textGray = "#7f7f7f";
 
-// Chart 1: Consumo de Energía (Barra + Línea)
+//Chart 1: Energy Consumption (Bar + Line)
 const ctx1 = document.getElementById('chart1').getContext('2d');
 new Chart(ctx1, {
   type: 'bar',
@@ -40,7 +40,7 @@ new Chart(ctx1, {
   }
 });
 
-// Chart 2: Pie Chart
+//Chart 2: Pie Chart
 const ctx2 = document.getElementById('chart2').getContext('2d');
 new Chart(ctx2, {
   type: 'pie',
@@ -60,7 +60,7 @@ new Chart(ctx2, {
   }
 });
 
-// Chart 3: Línea Huella de Carbono
+//Chart 3: Carbon Footprint Line
 const ctx3 = document.getElementById('chart3').getContext('2d');
 new Chart(ctx3, {
   type: 'line',
@@ -88,7 +88,7 @@ new Chart(ctx3, {
   }
 });
 
-// Chart 4: Doughnut Capacidad
+//Chart 4: Doughnut Capacity
 const ctx4 = document.getElementById('chart4').getContext('2d');
 new Chart(ctx4, {
   type: 'doughnut',
@@ -109,7 +109,7 @@ new Chart(ctx4, {
   }
 });
 
-// Chart 5: Línea Demo
+//Chart 5: Line Demo 
 const ctx5 = document.getElementById('chart5').getContext('2d');
 new Chart(ctx5, {
   type: 'line',
@@ -137,7 +137,7 @@ new Chart(ctx5, {
   }
 });
 
-// Chart 6: Bar Demo
+// Chart 6: Bar Demo 
 const ctx6 = document.getElementById('chart6').getContext('2d');
 new Chart(ctx6, {
   type: 'bar',
@@ -162,7 +162,7 @@ new Chart(ctx6, {
   }
 });
 
-// Chart 7: Radar Demo
+// Chart 7: Radar Demo 
 const ctx7 = document.getElementById('chart7').getContext('2d');
 new Chart(ctx7, {
   type: 'radar',
