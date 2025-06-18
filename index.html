@@ -1,73 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Energy Dashboard</title>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <!-- Chart.js CDN for charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Energy Dashboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<div class="dashboard">
-    <aside class="sidebar">
-        <div class="menu">menu</div>
-        <nav>
-            <ul>
-                <li>🏠</li>
-                <li>⚡</li>
-                <li>🌱</li>
-                <li>💰</li>
-                <li>⚙️</li>
-            </ul>
-        </nav>
-    </aside>
-    <main class="main">
-        <header>
-            <div class="dashboard-title">Dashboard</div>
-            <div class="user">
-                <span>AH</span>
-                <span>Akhsan Hakiki</span>
-            </div>
-        </header>
-        <section class="stats">
-            <div class="stat"><span>Overall System Efficiency</span><b id="efficiency">70%</b></div>
-            <div class="stat"><span>Renewable Energy Utilization</span><b id="renewable">70%</b></div>
-            <div class="stat"><span>Carbon Emmission Reduction</span><b id="carbon-reduction">40%</b></div>
-            <div class="stat"><span>Energy Cost Savings</span><b id="cost-savings">150</b><small>metric tons CO2/year</small></div>
-            <div class="stat"><span>Overall System Carbon Footprint</span><b id="carbon-footprint">150</b><small>metric tons CO2/year</small></div>
-        </section>
-        <section class="content">
-            <div class="left">
-                <div class="card">
-                    <div class="card-title">Energy Usage</div>
-                    <canvas id="energyUsageChart"></canvas>
-                    <div class="mini-info">
-                        <ul>
-                            <li>Energy consumption: <span id="energy-consumption">137.23 kWh/month</span></li>
-                            <li>House area: <span id="house-area">125 m2</span></li>
-                            <li>Average temperature: <span id="avg-temp">50°C</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-title">Carbon Footprint CO₂</div>
-                    <canvas id="carbonFootprintChart"></canvas>
-                </div>
-            </div>
-            <div class="center">
-                <div class="card">
-                    <div class="card-title">Daily Energy Cost</div>
-                    <div class="legend">
-                        <span class="dot main"></span>Main Power <b id="main-power">236 THB</b>
-                        <span class="dot green"></span>Green Energy <b id="green-energy">90 THB</b>
-                    </div>
-                    <div class="total">Total: <b id="total-cost">336 THB</b></div>
-                    <canvas id="costPieChart"></canvas>
-                </div>
-            </div>
-        </section>
+  <div class="dashboard-container">
+    <header>
+      <h1>Smart Energy Dashboard</h1>
+    </header>
+    <main>
+      <section class="stats-grid">
+        <div class="stat-card green">
+          <span class="stat-title">Eficiencia General</span>
+          <span class="stat-value">70%</span>
+        </div>
+        <div class="stat-card green">
+          <span class="stat-title">Uso Energía Renovable</span>
+          <span class="stat-value">70%</span>
+        </div>
+        <div class="stat-card green">
+          <span class="stat-title">Reducción de CO₂</span>
+          <span class="stat-value">40%</span>
+        </div>
+        <div class="stat-card green">
+          <span class="stat-title">Ahorro Costos</span>
+          <span class="stat-value">150</span>
+        </div>
+        <div class="stat-card green">
+          <span class="stat-title">Huella de Carbono</span>
+          <span class="stat-value">150</span>
+        </div>
+      </section>
+      <section class="charts-grid">
+        <div class="chart-card">
+          <h2>Consumo de Energía</h2>
+          <canvas id="chart1"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Costo Diario de Energía</h2>
+          <canvas id="chart2"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Huella de Carbono CO₂</h2>
+          <canvas id="chart3"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Capacidad de Almacenamiento</h2>
+          <canvas id="chart4"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Gráfica 5</h2>
+          <canvas id="chart5"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Gráfica 6</h2>
+          <canvas id="chart6"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Gráfica 7</h2>
+          <canvas id="chart7"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Gráfica 8</h2>
+          <canvas id="chart8"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Producción Solar Mensual</h2>
+          <canvas id="chart9"></canvas>
+        </div>
+      </section>
     </main>
-</div>
-<script src="./JS/script.js"></script>
+  </div>
+  <script src="./JS/script.js"></script>
 </body>
 </html>

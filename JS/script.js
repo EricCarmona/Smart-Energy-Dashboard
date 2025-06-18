@@ -1,122 +1,236 @@
-/*
-  Dit bestand maakt deel uit van de map 'js/' waarin alle
-  JavaScript-bestanden van het project zijn verzameld.
-  Hier worden de belangrijkste functies behandeld zoals:
-  - Beheer van energiedata
-  - Dynamische update van het dashboard
-  - Interactie met grafieken (Chart.js)
-  Het overzichtelijk houden van de code maakt lezen en onderhoud makkelijker.
-*/
-// Data values can be filled with PHP (echo json_encode($array)) if embedded in a PHP file
+// Colores inspirados en el diseño de la imagen
+const green = "#87cfa6";
+const lightGreen = "#eaf8ed";
+const orange = "#faa993";
+const textGray = "#7f7f7f";
 
-// Energy Usage: Bar (energy) + Line (temperature)
-const ctxEnergy = document.getElementById('energyUsageChart').getContext('2d');
-new Chart(ctxEnergy, {
-    type: 'bar',
-    data: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-        datasets: [{
-            type: 'bar',
-            label: 'Energy (kWh)',
-            data: [120, 180, 130, 90, 60, 80, 160, 210, 150, 190, 170, 110], // PHP: <?=json_encode($energyData)?>
-            backgroundColor: 'rgba(255, 189, 169, 0.37)',
-            borderRadius: 6,
-            yAxisID: 'y',
-        },{
-            type: 'line',
-            label: 'Temperature (°C)',
-            data: [10,12,16,18,20,22,24,26,24,20,15,12], // PHP: <?=json_encode($tempData)?>
-            borderColor: '#6abf7a',
-            backgroundColor: 'rgba(106, 191, 122, 0.15)',
-            tension: 0.35,
-            pointRadius: 3,
-            fill: false,
-            yAxisID: 'y1'
-        }]
+// Chart 1: Consumo de Energía (Barra + Línea)
+const ctx1 = document.getElementById('chart1').getContext('2d');
+new Chart(ctx1, {
+  type: 'bar',
+  data: {
+    labels: ['Enero','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    datasets: [
+      {
+        label: 'Energía',
+        data: [80, 90, 60, 70, 40, 60, 110, 180, 120, 115, 90, 60],
+        backgroundColor: orange + "99",
+        borderRadius: 8
+      },
+      {
+        label: 'Temperatura',
+        type: 'line',
+        data: [10, 12, 13, 18, 20, 23, 25, 26, 22, 18, 14, 11],
+        borderColor: green,
+        backgroundColor: 'transparent',
+        tension: 0.4,
+        pointRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { color: textGray } }
     },
-    options: {
-        responsive: true,
-        plugins: { legend: { display: true }},
-        scales: {
-            y: {
-                beginAtZero: true,
-                position: 'left',
-                title: { display: true, text: 'kWh' },
-                grid: { color: '#eee' }
-            },
-            y1: {
-                beginAtZero: true,
-                position: 'right',
-                title: { display: true, text: '°C' },
-                grid: { drawOnChartArea: false }
-            }
-        }
+    scales: {
+      x: { ticks: { color: textGray } },
+      y: { ticks: { color: textGray } }
     }
+  }
 });
 
-// Daily Energy Cost Pie
-const ctxPie = document.getElementById('costPieChart').getContext('2d');
-new Chart(ctxPie, {
-    type: 'doughnut',
-    data: {
-        labels: ['Main Power', 'Green Energy'],
-        datasets: [{
-            data: [236, 90], // PHP: <?=json_encode([$mainPower, $greenEnergy])?>
-            backgroundColor: ['#ffbda9', '#b1e7bb']
-        }]
-    },
-    options: {
-        plugins: {
-            legend: { display: true, position: 'bottom' }
-        },
-        cutout: '65%',
+// Chart 2: Pie Chart
+const ctx2 = document.getElementById('chart2').getContext('2d');
+new Chart(ctx2, {
+  type: 'pie',
+  data: {
+    labels: ['Energía Principal', 'Energía Verde'],
+    datasets: [{
+      data: [72, 28],
+      backgroundColor: [orange, green],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { color: textGray } }
     }
+  }
 });
 
-// Carbon Footprint line
-const ctxCarbon = document.getElementById('carbonFootprintChart').getContext('2d');
-new Chart(ctxCarbon, {
-    type: 'line',
-    data: {
-        labels: ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'],
-        datasets: [{
-            label: 'CO₂ (kg)',
-            data: [30, 29, 27, 25, 22, 20, 19, 15, 13, 10], // PHP: <?=json_encode($carbonData)?>
-            borderColor: '#6abf7a',
-            backgroundColor: 'rgba(106, 191, 122, 0.2)',
-            fill: true,
-            tension: 0.3,
-            pointBackgroundColor: '#6abf7a'
-        }]
+// Chart 3: Línea Huella de Carbono
+const ctx3 = document.getElementById('chart3').getContext('2d');
+new Chart(ctx3, {
+  type: 'line',
+  data: {
+    labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023'],
+    datasets: [{
+      label: 'CO₂ (kg)',
+      data: [30, 28, 25, 22, 20, 17, 16, 13, 11],
+      backgroundColor: green + "66",
+      borderColor: green,
+      fill: true,
+      tension: 0.3,
+      pointRadius: 3
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false }
     },
-    options: {
-        plugins: { legend: { display: false }},
-        scales: {
-            y: {
-                beginAtZero: true,
-                title: { display: true, text: 'kg' },
-                grid: { color: '#e3f3e7' }
-            }
-        }
+    scales: {
+      x: { ticks: { color: textGray } },
+      y: { ticks: { color: textGray } }
     }
+  }
 });
 
-// Storage donut
-const ctxStorage = document.getElementById('storageChart').getContext('2d');
-new Chart(ctxStorage, {
-    type: 'doughnut',
-    data: {
-        labels: ['Main Power', 'Green Energy'],
-        datasets: [{
-            data: [50, 25], // PHP: <?=json_encode([$storageMain, $storageGreen])?>
-            backgroundColor: ['#ffbda9', '#b1e7bb'],
-            borderWidth: 0
-        }]
-    },
-    options: {
-        plugins: {
-            legend: { display: false }
-        },
-        cutout: '80%',
+// Chart 4: Doughnut Capacidad
+const ctx4 = document.getElementById('chart4').getContext('2d');
+new Chart(ctx4, {
+  type: 'doughnut',
+  data: {
+    labels: ['Energía Principal', 'Energía Verde'],
+    datasets: [{
+      data: [50, 25, 25],
+      backgroundColor: [orange, green, lightGreen],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    cutout: '70%',
+    plugins: {
+      legend: { position: 'bottom', labels: { color: textGray } }
     }
+  }
+});
+
+// Chart 5: Línea Demo
+const ctx5 = document.getElementById('chart5').getContext('2d');
+new Chart(ctx5, {
+  type: 'line',
+  data: {
+    labels: ['A','B','C','D','E','F','G','H'],
+    datasets: [{
+      label: 'Serie A',
+      data: [10, 20, 15, 30, 20, 25, 18, 22],
+      borderColor: orange,
+      backgroundColor: orange + "33",
+      fill: true,
+      tension: 0.4,
+      pointRadius: 3
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      x: { ticks: { color: textGray } },
+      y: { ticks: { color: textGray } }
+    }
+  }
+});
+
+// Chart 6: Bar Demo
+const ctx6 = document.getElementById('chart6').getContext('2d');
+new Chart(ctx6, {
+  type: 'bar',
+  data: {
+    labels: ['1','2','3','4','5','6'],
+    datasets: [{
+      label: 'Cantidad',
+      data: [4, 8, 5, 7, 6, 3],
+      backgroundColor: green + "cc",
+      borderRadius: 8
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      x: { ticks: { color: textGray } },
+      y: { ticks: { color: textGray } }
+    }
+  }
+});
+
+// Chart 7: Radar Demo
+const ctx7 = document.getElementById('chart7').getContext('2d');
+new Chart(ctx7, {
+  type: 'radar',
+  data: {
+    labels: ['A', 'B', 'C', 'D', 'E'],
+    datasets: [{
+      label: 'Valores',
+      data: [20, 10, 30, 15, 25],
+      backgroundColor: green + "33",
+      borderColor: green,
+      pointBackgroundColor: orange
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      r: {
+        angleLines: { color: lightGreen },
+        grid: { color: lightGreen },
+        pointLabels: { color: textGray }
+      }
+    }
+  }
+});
+
+// Chart 8: Polar Area Demo
+const ctx8 = document.getElementById('chart8').getContext('2d');
+new Chart(ctx8, {
+  type: 'polarArea',
+  data: {
+    labels: ['Uno', 'Dos', 'Tres', 'Cuatro'],
+    datasets: [{
+      data: [11, 16, 7, 14],
+      backgroundColor: [green, orange, lightGreen, "#fff"]
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { color: textGray } }
+    }
+  }
+});
+
+// Chart 9: Producción Solar Mensual
+const ctx9 = document.getElementById('chart9').getContext('2d');
+new Chart(ctx9, {
+  type: 'bar',
+  data: {
+    labels: ['Enero','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    datasets: [{
+      label: 'kWh Generados',
+      data: [320, 410, 540, 600, 730, 820, 900, 870, 760, 620, 410, 300],
+      backgroundColor: "#87cfa6cc",
+      borderRadius: 8
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      x: { ticks: { color: textGray } },
+      y: { ticks: { color: textGray } }
+    }
+  }
 });
