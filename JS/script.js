@@ -199,7 +199,7 @@ new Chart(ctx8, {
     labels: ['One', 'Two', 'Three', 'Four'],
     datasets: [{
       data: [11, 16, 7, 14],
-      backgroundColor: [green, orange, lightGreen, "#fff"]
+      backgroundColor: [green, orange, lightGreen, "#f0c0c0"],
     }]
   },
   options: {
