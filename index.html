@@ -2,12 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Energy Dashboard</title>
     <link rel="stylesheet" href="./CSS/style.css">
+    <!-- Chart.js CDN for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <p>test</p>
-    <script src="./JS/script.js"></script>
+<div class="dashboard">
+    <aside class="sidebar">
+        <div class="menu">menu</div>
+        <nav>
+            <ul>
+                <li>🏠</li>
+                <li>⚡</li>
+                <li>🌱</li>
+                <li>💰</li>
+                <li>⚙️</li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main">
+        <header>
+            <div class="dashboard-title">Dashboard</div>
+            <div class="user">
+                <span>AH</span>
+                <span>Akhsan Hakiki</span>
+            </div>
+        </header>
+        <section class="stats">
+            <div class="stat"><span>Overall System Efficiency</span><b id="efficiency">70%</b></div>
+            <div class="stat"><span>Renewable Energy Utilization</span><b id="renewable">70%</b></div>
+            <div class="stat"><span>Carbon Emmission Reduction</span><b id="carbon-reduction">40%</b></div>
+            <div class="stat"><span>Energy Cost Savings</span><b id="cost-savings">150</b><small>metric tons CO2/year</small></div>
+            <div class="stat"><span>Overall System Carbon Footprint</span><b id="carbon-footprint">150</b><small>metric tons CO2/year</small></div>
+        </section>
+        <section class="content">
+            <div class="left">
+                <div class="card">
+                    <div class="card-title">Energy Usage</div>
+                    <canvas id="energyUsageChart"></canvas>
+                    <div class="mini-info">
+                        <ul>
+                            <li>Energy consumption: <span id="energy-consumption">137.23 kWh/month</span></li>
+                            <li>House area: <span id="house-area">125 m2</span></li>
+                            <li>Average temperature: <span id="avg-temp">50°C</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Carbon Footprint CO₂</div>
+                    <canvas id="carbonFootprintChart"></canvas>
+                </div>
+            </div>
+            <div class="center">
+                <div class="card">
+                    <div class="card-title">Daily Energy Cost</div>
+                    <div class="legend">
+                        <span class="dot main"></span>Main Power <b id="main-power">236 THB</b>
+                        <span class="dot green"></span>Green Energy <b id="green-energy">90 THB</b>
+                    </div>
+                    <div class="total">Total: <b id="total-cost">336 THB</b></div>
+                    <canvas id="costPieChart"></canvas>
+                </div>
+            </div>
+            <div class="right">
+                <div class="card orange">
+                    <div class="card-title">Best Power Efficiency</div>
+                    <div class="desc">This mode will help to extend the power storage efficiency.</div>
+                    <button class="btn">Change Plan</button>
+                </div>
+                <div class="card">
+                    <div class="card-title">Energy Storage</div>
+                    <canvas id="storageChart"></canvas>
+                    <div class="storage-text"><b id="storage-capacity">75%</b> Capacity</div>
+                    <div class="legend">
+                        <span class="dot main"></span>Main Power <span id="storage-main">50%</span>
+                        <span class="dot green"></span>Green Energy <span id="storage-green">25%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="./JS/script.js"></script>
 </body>
 </html>
