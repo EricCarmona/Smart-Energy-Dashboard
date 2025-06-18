@@ -1,24 +1,24 @@
-// Colors inspired by the design in the image.
+// Colors inspired by the dashboard design
 const green = "#87cfa6";
 const lightGreen = "#eaf8ed";
 const orange = "#faa993";
 const textGray = "#7f7f7f";
 
-//Chart 1: Energy Consumption (Bar + Line)
+// Chart 1: Energy Consumption (Bar + Line)
 const ctx1 = document.getElementById('chart1').getContext('2d');
 new Chart(ctx1, {
   type: 'bar',
   data: {
-    labels: ['Enero','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     datasets: [
       {
-        label: 'Energía',
+        label: 'Energy',
         data: [80, 90, 60, 70, 40, 60, 110, 180, 120, 115, 90, 60],
         backgroundColor: orange + "99",
         borderRadius: 8
       },
       {
-        label: 'Temperatura',
+        label: 'Temperature',
         type: 'line',
         data: [10, 12, 13, 18, 20, 23, 25, 26, 22, 18, 14, 11],
         borderColor: green,
@@ -40,12 +40,12 @@ new Chart(ctx1, {
   }
 });
 
-//Chart 2: Pie Chart
+// Chart 2: Pie Chart
 const ctx2 = document.getElementById('chart2').getContext('2d');
 new Chart(ctx2, {
   type: 'pie',
   data: {
-    labels: ['Energía Principal', 'Energía Verde'],
+    labels: ['Main Energy', 'Green Energy'],
     datasets: [{
       data: [72, 28],
       backgroundColor: [orange, green],
@@ -60,7 +60,7 @@ new Chart(ctx2, {
   }
 });
 
-//Chart 3: Carbon Footprint Line
+// Chart 3: CO₂ Footprint Line
 const ctx3 = document.getElementById('chart3').getContext('2d');
 new Chart(ctx3, {
   type: 'line',
@@ -88,12 +88,12 @@ new Chart(ctx3, {
   }
 });
 
-//Chart 4: Doughnut Capacity
+// Chart 4: Storage Capacity Doughnut
 const ctx4 = document.getElementById('chart4').getContext('2d');
 new Chart(ctx4, {
   type: 'doughnut',
   data: {
-    labels: ['Energía Principal', 'Energía Verde'],
+    labels: ['Main Power', 'Green Energy', 'Reserve'],
     datasets: [{
       data: [50, 25, 25],
       backgroundColor: [orange, green, lightGreen],
@@ -109,14 +109,14 @@ new Chart(ctx4, {
   }
 });
 
-//Chart 5: Line Demo 
+// Chart 5: Line Demo
 const ctx5 = document.getElementById('chart5').getContext('2d');
 new Chart(ctx5, {
   type: 'line',
   data: {
     labels: ['A','B','C','D','E','F','G','H'],
     datasets: [{
-      label: 'Serie A',
+      label: 'Series A',
       data: [10, 20, 15, 30, 20, 25, 18, 22],
       borderColor: orange,
       backgroundColor: orange + "33",
@@ -137,14 +137,14 @@ new Chart(ctx5, {
   }
 });
 
-// Chart 6: Bar Demo 
+// Chart 6: Bar Demo
 const ctx6 = document.getElementById('chart6').getContext('2d');
 new Chart(ctx6, {
   type: 'bar',
   data: {
     labels: ['1','2','3','4','5','6'],
     datasets: [{
-      label: 'Cantidad',
+      label: 'Amount',
       data: [4, 8, 5, 7, 6, 3],
       backgroundColor: green + "cc",
       borderRadius: 8
@@ -162,14 +162,14 @@ new Chart(ctx6, {
   }
 });
 
-// Chart 7: Radar Demo 
+// Chart 7: Radar Demo
 const ctx7 = document.getElementById('chart7').getContext('2d');
 new Chart(ctx7, {
   type: 'radar',
   data: {
     labels: ['A', 'B', 'C', 'D', 'E'],
     datasets: [{
-      label: 'Valores',
+      label: 'Values',
       data: [20, 10, 30, 15, 25],
       backgroundColor: green + "33",
       borderColor: green,
@@ -196,7 +196,7 @@ const ctx8 = document.getElementById('chart8').getContext('2d');
 new Chart(ctx8, {
   type: 'polarArea',
   data: {
-    labels: ['Uno', 'Dos', 'Tres', 'Cuatro'],
+    labels: ['One', 'Two', 'Three', 'Four'],
     datasets: [{
       data: [11, 16, 7, 14],
       backgroundColor: [green, orange, lightGreen, "#fff"]
@@ -210,14 +210,14 @@ new Chart(ctx8, {
   }
 });
 
-// Chart 9: Producción Solar Mensual
+// Chart 9: Monthly Solar Production
 const ctx9 = document.getElementById('chart9').getContext('2d');
 new Chart(ctx9, {
   type: 'bar',
   data: {
-    labels: ['Enero','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     datasets: [{
-      label: 'kWh Generados',
+      label: 'kWh Generated',
       data: [320, 410, 540, 600, 730, 820, 900, 870, 760, 620, 410, 300],
       backgroundColor: "#87cfa6cc",
       borderRadius: 8
