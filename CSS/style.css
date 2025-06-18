@@ -3,7 +3,12 @@
   De stijlen zijn georganiseerd in duidelijke groepen,
   zodat het makkelijker is om het ontwerp te begrijpen en te onderhouden.
   Hier wordt de lay-out, kleuren, lettertypen en responsiviteit geregeld.
-*/
+*/ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background: #181b1f;
@@ -14,7 +19,8 @@ body {
 
 .dashboard {
     display: flex;
-    height: 100vh;
+    height: 200vh;
+    width: 100%;
 }
 
 .sidebar {
@@ -119,7 +125,7 @@ header {
     flex: 1;
 }
 
-.left, .center, .right {
+.left, .center {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -131,10 +137,6 @@ header {
 
 .center {
     flex: 1.1;
-}
-
-.right {
-    flex: 1.2;
 }
 
 .card {
