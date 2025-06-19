@@ -16,11 +16,15 @@
     <a href="./car-consumption.html" class="dashboard__link" onclick="showSection('auto')">Auto</a>
   </nav>
 
-  <div id="home" class="dashboard__section dashboard__section--active">
-    <h1>Home</h1>
-    <p>Welcome to the Smart Energy Dashboard.</p>
+  <div id="solar" class="dashboard__section dashboard__section--active">
+    <h1>Solar Panels</h1>
+    <p>Solar panel data overview.</p>
   </div>
-
+    
+  <div style="width: 100%; max-width: 800px; margin: auto;">
+    <canvas id="solarChart"></canvas>
+  </div>
+  
   <script src="./js/main.js"></script>
 </body>
 </html>
