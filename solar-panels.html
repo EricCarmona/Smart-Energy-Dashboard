@@ -6,8 +6,12 @@
   <title>Smart Energy Dashboard</title>
   <link rel="stylesheet" href="./css/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+
+  </style>
 </head>
 <body class="dashboard">
+
   <nav class="dashboard__nav">
     <a href="./index.html" class="dashboard__link" onclick="showSection('home')">Home</a>
     <a href="./energy-use.html" class="dashboard__link" onclick="showSection('energy')">Energy Use</a>
@@ -19,12 +23,30 @@
   <div id="solar" class="dashboard__section dashboard__section--active">
     <h1>Solar Panels</h1>
     <p>Solar panel data overview.</p>
-  </div>
-    
-  <div style="width: 100%; max-width: 800px; margin: auto;">
+
+   
+    <div id="theme-toggle">
+      <label>
+        <input type="checkbox" id="darkModeToggle" />
+        Donkere modus
+      </label>
+    </div>
+
+   
+    <div class="filters">
+      <div class="filter-buttons">
+        <button id="filterJaar">Jaar</button>
+        <button id="filterMaand">Maand</button>
+        <button id="filterDag">Dag</button>
+        <button id="filterUur">Uur</button>
+      </div>
+      <div id="filterControls"></div>
+      <div style="width: 100%; max-width: 800px; margin: auto;">
     <canvas id="solarChart"></canvas>
   </div>
-  
-  <script src="./js/main.js"></script>
+  </div>
+
+ 
+  <script src="js/main.js" defer></script>
 </body>
 </html>
