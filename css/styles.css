@@ -10,6 +10,52 @@
       height: 100vh;
       padding: 20px;
     }
+    
+    .dark-theme {
+    background-color: #121212;
+    color: white;
+}
+
+/*theme*/
+
+    body.dark-theme {
+      background-color: #121212;
+      color: white;
+    }
+
+    .filters {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-radius: 10px;
+    }
+
+    .dark-theme .filters {
+      background: #1e1e1e;
+    }
+
+    .filter-buttons button {
+      margin: 0.25rem;
+      padding: 0.5rem 1rem;
+    }
+
+    #filterControls select,
+    #filterControls input,
+    #filterControls button {
+      margin: 0.25rem;
+    }
+
+    #barChart {
+      max-width: 100%;
+      height: 400px;
+    }
+
+    #theme-toggle {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
 
     .dashboard__link {
       display: block;
